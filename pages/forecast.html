@@ -1,0 +1,28 @@
+<!--http://api.openweathermap.org/data/2.5/forecast/daily?APPID=YOURAPIKEY-->
+
+<p>
+    <a href="#/">Back to Search</a>
+</p>
+
+<h3>Forecast for {{ city }}</h3>
+<hr />
+
+<!-- Adding bg-primary class only if days is that particular link -->
+Hours: <a href="#/forecast/2" ng-class="{ 'bg-primary': days === '2' }">2</a> | <a href="#/forecast/5" ng-class="{ 'bg-primary': days === '5' }">5</a> | <a href="#/forecast/7" ng-class="{ 'bg-primary': days === '7' }">7</a>
+<hr />
+
+<div ng-repeat="w in weatherResult.list">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{ w.dt_txt  }}</h3>
+                </div>
+                <div class="panel-body">
+                    Temperature: {{ convertToFahrenheit(w.main.temp) }}
+                </div>
+            </div>
+        
+        </div>       
+    </div>
+</div>
