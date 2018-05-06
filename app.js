@@ -29,7 +29,7 @@ weatherApp.service('cityService', function() {
 })
 
 
-//Controllers
+//Defining Controllers
 weatherApp.controller('homeController',['$scope','cityService', function($scope, cityService) {
     
     $scope.city = cityService.city;
